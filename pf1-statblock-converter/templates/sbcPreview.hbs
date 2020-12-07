@@ -1,0 +1,110 @@
+<div style="width: 100%; background-color: #ffe9c7; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); columns: 2 150px">
+    <hr style="margin-left: 0; margin-top:-2px; width: 100%; height: 4px; background-color: #e0a100; border: 1px solid #000; column-span: all;" />
+    <div style="padding: 5px;">
+        <h1 style="border: none; font-family: 'Nodesto', 'Signika', 'Palatino Linotype', serif; color: #7a0800;">{{data.name}} {{#if data.notes.cr}}CR {{data.notes.cr}}{{/if}} {{#if data.notes.mr}}/MR {{data.notes.mr}}{{/if}}</h1>
+        {{#if data.shortDescription}}<div><em>data.shortDescription</em></div>{{/if}}
+        <!-- BASE -->
+        <hr style="margin-left: 0; width: 275px; height: 0; border-style: solid; border-width: 2px 0 2px 275px; border-color: transparent transparent transparent #7a0800;" />
+        <div style="break-inside: avoid;">
+            {{#if data.notes.source}}<strong>Source: </strong>{{data.notes.source}}<br/>{{/if}}
+            {{#if data.xp}}<strong>XP {{data.xp}}</strong><br/>{{/if}}
+            {{#if data.gender}}{{data.gender}} {{/if}}
+            {{#if data.template}}{{data.template}} {{/if}}
+            {{#if data.race}}{{data.race}} {{/if}}
+            {{#if data.notes.classes}}{{data.notes.classes}}<br/>{{/if}}
+            {{#if data.alignment}}{{data.alignment}} {{/if}}
+            {{#if data.size}}{{data.size}} {{/if}}
+            {{#if data.creature_type}}{{data.creature_type}} {{/if}}
+            {{#if data.creature_subtype}}({{data.creature_subtype}}){{/if}}<br/>
+            {{#if data.initiative}}<strong>Init</strong> {{data.initiative}}; {{/if}}
+            {{#if data.senses}}<strong>Senses</strong> {{data.senses}}; {{/if}}
+            {{#if data.aura}}<strong>Aura</strong> {{data.aura}}{{/if}}
+        </div>
+        <div style="break-inside: avoid;">
+            <h4 style="border: none; text-transform: uppercase; color: #7a0800; padding-top:6px;">Defense</h4>
+            <hr style="margin-left: 0; width: 275px; height: 0; border-style: solid; border-width: 2px 0 2px 275px; border-color: transparent transparent transparent #7a0800;" />
+            <strong>AC</strong> {{data.ac}}, <strong>Touch</strong> {{data.touch}}, <strong>Flat-Footed</strong> {{data.flat_footed}} {{data.notes.acBonus}}<br/>
+            <strong>Hit Points</strong> {{data.hp.total}} ({{data.hit_dice.hd.total}} HD; {{data.notes.hpDice}})<br/>
+            <strong>Fort</strong> {{data.fort_save.total}}, <strong>Ref</strong> {{data.ref_save.total}}, <strong>Will</strong> {{data.will_save.total}}; {{data.save_notes}}
+            {{#if data.defensive_abilities}}<br/><strong>Defensive Abilities</strong> {{data.defensive_abilities}}; {{/if}}
+            {{#if data.damage_reduction.dr_value}}<strong>DR</strong> {{data.damage_reduction.dr_value}}/{{data.damage_reduction.dr_type}}{{/if}}
+            {{#if data.immunities}}<strong>Immune</strong> {{data.immunities}}; {{/if}}
+            {{#if data.resistances}}<strong>Resist</strong> {{data.resistances}}; {{/if}}
+            {{#if data.spell_resistance.total}}<strong>SR</strong> {{data.spell_resistance.total}}{{/if}}
+            {{#if data.spell_resistance.context}} ({{data.spell_resistance.context}}){{/if}}
+            {{#if data.weaknesses}}<br/><strong>Weaknesses</strong> {{data.weaknesses}}{{/if}}
+        </div>
+        <div>
+            <div style="break-inside: avoid;">
+                <h4 style="border: none; text-transform: uppercase; color: #7a0800; padding-top:6px;">Offense</h4>
+                <hr style="margin-left: 0; width: 275px; height: 0; border-style: solid; border-width: 2px 0 2px 275px; border-color: transparent transparent transparent #7a0800;" />
+                <strong>Speed</strong> {{data.notes.speed}}<br/>
+                {{#if data.meleeAttacks}}<strong>Melee</strong> {{data.meleeAttacks}}<br/>{{/if}}
+                {{#if data.rangedAttacks}}<strong>Ranged</strong> {{data.rangedAttacks}}<br/>{{/if}}
+                {{#if data.space}}<strong>Space</strong> {{data.space}}; {{/if}}
+                {{#if data.reach}}<strong>Reach</strong> {{data.reach}}<br/>{{/if}}
+                {{#if data.specialAttacks}}<strong>Special Attacks</strong> {{data.specialAttacks}}<br/>{{/if}}
+            </div>
+        </div>
+        <!-- SPELLCASTING -->
+        {{#if data.hasSpellcasting}}
+            <div style='break-inside: avoid;'>
+                <h4 style='border: none; text-transform: uppercase; color: #7a0800; padding-top:6px;'>Spellcasting</h4><hr style='margin-left: 0; width: 275px; height: 0; border-style: solid; border-width: 2px 0 2px 275px; border-color: transparent transparent transparent #7a0800;' />
+            </div>
+        {{/if}}
+                
+        <!-- TACTICS -->
+        {{#if data.hasTactics}}
+            <div style='break-inside: avoid;'>
+                <h4 style='border: none; text-transform: uppercase; color: #7a0800; padding-top:6px;'>Tactics</h4>
+                <hr style='margin-left: 0; width: 275px; height: 0; border-style: solid; border-width: 2px 0 2px 275px; border-color: transparent transparent transparent #7a0800;' />
+        {{/if}}
+                {{#if data.tactics.before_combat}}<strong>Before Combat:</strong> {{data.tactics.before_combat}}<br/>{{/if}}
+                {{#if data.tactics.during_combat}}<strong>During Combat:</strong> {{data.tactics.during_combat}}<br/>{{/if}}
+                {{#if data.tactics.morale}}<strong>Morale:</strong> {{data.tactics.morale}}<br/>{{/if}}
+                {{#if data.tactics.base_statistics}}<strong>Base Statistics:</strong> {{data.tactics.base_statistics}}<br/>{{/if}}
+        {{#if data.hasTactics}}
+            </div>
+        {{/if}}
+        <!-- STATISTICS -->
+        <div style="break-inside: avoid;">
+            <h4 style="border: none; text-transform: uppercase; color: #7a0800; padding-top:6px;">Statistics</h4>
+            <hr style="margin-left: 0; width: 275px; height: 0; border-style: solid; border-width: 2px 0 2px 275px; border-color: transparent transparent transparent #7a0800;" />
+            <strong>Str</strong> {{data.str.total}}, <strong>Dex</strong> {{data.dex.total}}, <strong>Con</strong> {{data.con.total}}, <strong>Int</strong> {{data.int.total}}, <strong>Wis</strong> {{data.wis.total}}, <strong>Cha</strong> {{data.cha.total}}<br/>
+            <strong>Base Atk</strong> {{data.bab}}; <strong>CMB</strong> {{data.cmb.total}} {{#if data.cmb.context}} {{data.cmb.context}}{{/if}}; <strong>CMD</strong> {{data.cmd.total}}{{#if data.cmd.context}} {{data.cmd.context}}{{/if}}<br/>
+            <strong>Feats</strong> {{data.notes.feats}}<br/>
+            <strong>Skills</strong> {{data.notes.skills}}<br/>
+            <strong>Languages</strong> {{data.notes.languages}}<br/>
+            {{#if data.notes.sq}}<strong>SQ</strong> {{data.notes.sq}}<br/>{{/if}}
+            {{#if data.notes.combatGear}}<strong>Combat Gear</strong>  {{data.notes.combatGear}}<br/>{{/if}}
+            {{#if data.notes.otherGear}}<strong>Other Gear</strong>  {{data.notes.otherGear}}<br/>{{/if}}
+            {{#if data.notes.gear}}<strong>Gear</strong>  {{data.notes.gear}}<br/>{{/if}}
+        </div>
+        <!-- ECOLOGY -->
+        {{#if data.hasEcology}}
+            <div style='break-inside: avoid;'>
+                <h4 style='border: none; text-transform: uppercase; color: #7a0800; padding-top:6px;'>Ecology</h4><hr style='margin-left: 0; width: 275px; height: 0; border-style: solid; border-width: 2px 0 2px 275px; border-color: transparent transparent transparent #7a0800;' />
+        {{/if}}
+                {{#if data.ecology.environment}}<strong>Environment:</strong> {{data.ecology.environment}}<br/>{{/if}}
+                {{#if data.ecology.organization}}<strong>Organization:</strong> {{data.ecology.organization}}<br/>{{/if}}
+                {{#if data.ecology.treasure}}<strong>Treasure:</strong> {{data.ecology.treasure}}<br/>{{/if}}
+        {{#if data.hasEcology}}
+            </div>
+        {{/if}}
+        <!-- SPECIAL ABILITIES -->
+        {{#if data.hasSpecialAbilities}}
+            <div style='break-inside: avoid;'>
+                <h4 style='border: none; text-transform: uppercase; color: #7a0800; padding-top:6px;'>Special Abilities</h4><hr style='margin-left: 0; width: 275px; height: 0; border-style: solid; border-width: 2px 0 2px 275px; border-color: transparent transparent transparent #7a0800;' />
+            </div>
+        {{/if}}
+        
+        <!-- DESCRIPTION -->
+        {{#if data.description}}
+            <div style='break-inside: avoid;'>
+                <h4 style='border: none; text-transform: uppercase; color: #7a0800; padding-top:6px;'>Description</h4><hr style='margin-left: 0; width: 275px; height: 0; border-style: solid; border-width: 2px 0 2px 275px; border-color: transparent transparent transparent #7a0800;' />
+        {{/if}}
+        {{#if data.description}}{{data.description}}<br/>{{/if}}
+                    
+    </div>
+    <hr style="margin-left: 0; margin-bottom: -3px; width: 100%; height: 4px; background-color: #e0a100; border: 1px solid #000; column-span: all;" />
+</div>

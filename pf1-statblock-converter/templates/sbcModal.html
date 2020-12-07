@@ -1,0 +1,43 @@
+<div class="sbcContainer">
+    <section class="sbcInputContainer">
+        <div class="sbcHeader">
+            <div>
+                Enter the Statblock you want to convert to an actor
+            </div>
+            <div style="font-size: 8pt;">
+                Disclaimer: This converter is not perfect, so please check the output carefully. For Bugs and Issues please visit my <a href="https://github.com/Lavaeolous/PF1-StatBlock-Converter-Module/issues" target="_blank">Github</a>.
+            </div>
+        </div>
+        <div class="sbcTitle">Input</div>
+        <div class="sbcInputArea">
+            <div id="sbcBackdrop">
+                <div id="sbcHighlights" class="sbcHighlights">
+                </div>
+            </div>
+            <textarea class="sbcInput" id="sbcInput" form="statBlockInputForm" placeholder="Copy &amp; Paste Statblock here" wrap="hard" cols="1"></textarea>
+        </div>
+    </section>
+    <section class="sbcPreviewContainer">
+        <div class="sbcHeader sbcButtons">
+            <div class="sbcActorTypeToggle"><span class="sbcActive"></span>
+                <div class="sbcActorTypeToggle-case npc">NPC</div>
+                <div class="sbcActorTypeToggle-case pc">PC</div>
+            </div>
+            <div id="sbcImportButton">
+                <div class="sbcImportButton-case">IMPORT</div>
+            </div>
+            <div id="sbcResetButton">
+                <div class="sbcResetButton-case">RESET</div>
+            </div>
+        </div>
+        <div class="sbcTitle">Preview</div>
+        <div class="sbcPreview" id="sbcPreview">
+        </div>
+    </section>
+</div>
+<section class="sbcErrorContainer">
+    <div class="sbcErrorTitle"></div>
+    <div id="sbcErrors">
+        
+    </div>
+</section>
